@@ -1,0 +1,22 @@
+
+    {% extends "index.html" %}
+
+    {% block content %}
+    <h2>Registration Form For New User </h2>
+
+    <div class="container">
+
+        <form name="register" id="registration_form" enctype="multipart/form-data" action="" method="POST">
+            <label for="email"><b>Email</b></label>
+            <input type="text" id ="email" placeholder="anna@murach" name="email" > <span>*</span>
+            <br>
+            <label for="pass"><b>Password</b></label>
+            <input type="password" id="pass" placeholder="Mohamed@grfe411" name="password" ><span>*</span>
+            <input class="btn-submit" type="submit" name="submit">
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="static/js/script.js"></script>
+
+
+    {% endblock %}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/css/css.css">
+    <title></title>
+</head>
+<body>
+    
+    <div id ="logout">
+        <a href="{{url_for('login')}}">logout</a>
+    </div><br><br>
+  
+    {% include "uplode.html" %} 
+    {% include "delete.html" %}
+    <div class="center">
+
+        <h1>Recipes</h1>
+        {% for recipe in recipes %}
+        <img style="border-radius: 4rem;" width="500px" height="500px" src="static/img/{{ recipe[0][0] }}"></img>
+        <h2>{{ recipe[1] }}</h2>
+        {% endfor %}
+
+<!--     
+        <video autoplay loop id="myVideo">
+            <source src="static/video/1.mp4" type="video/mp4">
+          </video> -->
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="static/js/script1.js"></script> 
+    
+</body>
+</html>
