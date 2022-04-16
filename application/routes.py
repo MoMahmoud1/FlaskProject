@@ -49,7 +49,6 @@ def home():
 
 app.config["UPLOAD_PATH"] = "application/static/img"
 
-
 @app.route("/uplode", methods=['POST', 'GET'])
 def uplode():
     if request.method == 'POST':
@@ -67,20 +66,15 @@ def uplode():
         servings = request.form.get('servings')
 
         # append all inputs to the list 
-        # recipe=[uploaded_file.filename]
-        recipe =[]
-        # add the image to list
+        # recipe = []
+        # add the image to list 
+        recipes = [uploaded_file.filename]
         # recipe[uploaded_file.filename]=[name,ingredients,instructions,servings]
-
-        recipe.append(uploaded_file.filename)
-        recipe.append(name)
-        recipe.append(ingredients)
-        recipe.append(instructions)
-        recipe.append(servings)
+        recipes.append([name, ingredients, instructions, servings])
         # write all inputs to recipes  csv file 
         with open('recipes.csv', 'a', newline='') as file:
             writer = csv.writer(file)
-            writer.writerow(recipe)
+            writer.writerow(recipes)
     # call back to home.html page   
     return redirect('home')
 
@@ -92,11 +86,11 @@ def delete():
         for name1 in recipe:
             if name == name1:
                 recipes.remove(recipe)
-
+    print(name)
     with open('recipes.csv', 'w', newline='') as file:
-        writer = csv.writer(file)
+        writer = csv.writer(file)  
         writer.writerow(recipes)
-
+          
     return render_template('home.html')
 
 
