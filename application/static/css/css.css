@@ -1,0 +1,60 @@
+body{
+background-color: darkturquoise;
+  /* background-image: url("images/2.jpg"); */
+
+}
+
+
+.center {
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+   
+  }
+  #comment{
+
+    width: 30%;
+    height: 100px;
+    padding: 10px;
+    background-color: #d0e2bc;
+  }
+#logout{
+  padding-left: 95%;
+  background-color:chartreuse;
+  border: 4px solid black;
+  border-radius: 2rem;
+  padding: 5px 10px;
+  text-align: center;
+  display: inline-block;
+
+}
+#ingredients{
+
+  width: 500px;
+  height: 40px;
+}
+
+#instructions{
+
+  width: 500px;
+  height: 40px;
+}
+
+#servings{
+
+  width: 500px;
+  height: 40px;
+}
+#image{
+ width: 500px;
+}
+
+/* #myVideo {
+  position: fixed; 
+  right: 0;
+  bottom: 0%;
+  min-width: 100%; 
+  min-height: 100%;
+} */

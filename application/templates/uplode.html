@@ -1,0 +1,24 @@
+
+<form method = 'POST' id="uplode_form"action="{{ url_for('uplode')}}" enctype="multipart/form-data" class="needs-validation">
+    <div>
+        <p><input id="image" type="file" name="file" class="form-control" accept=".jpg,.png,.jpeg" required> <br>
+
+          <label for="name">Name</label><br>
+          <input type="text"  name="name" id="name" rows="5" required > </input>
+          <span>*</span><br>
+
+          <label for="ingredients">ingredients</label><br>
+        <input type="text"  name="ingredients" id="ingredients" rows="5" required > </input>
+        <span>*</span><br>
+
+          <label for="instructions">instructions</label><br>
+          <input type="text"  name="instructions" id="instructions" rows="5" required > </input> <span>*</span><br>
+
+          <label for="servings">servings</label><br>
+          <input type="text"  name="servings" id="servings" rows="5" required > </input><span>*</span>
+    </div>
+      <input type="submit" value="Submit">
+  </form>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="static/js/script1.js"></script> 
+
