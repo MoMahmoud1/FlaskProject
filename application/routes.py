@@ -66,10 +66,14 @@ def uplode():
         servings = request.form.get('servings')
         # add the image to list 
     
-        recipes.append([uploaded_file.filename,name, ingredients, instructions, servings])
+        recipes.append([uploaded_file.filename])
         # write all inputs to recipes  csv file 
         with open('allRecipes.csv', 'a', newline='') as file:
             writer = csv.writer(file)
+            writer.writerow(recipes)
+        recipes.append([name, ingredients, instructions, servings])
+        with open('allRecipes.csv', 'a', newline='') as file:
+            writer = csv.writer(file, delimiter=' ')
             writer.writerow(recipes)
     # call back to home.html page   
     return redirect('home')
