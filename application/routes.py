@@ -82,11 +82,8 @@ def delete():
     for recipe in recipes:
         for name1 in recipe:
             if name == name1:
-                recipes.remove(recipe)
-    with open('allRecipes.csv', 'w', newline='') as file:
-        writer = csv.writer(file)  
-        writer.writerow(recipes)
-          
+                recipes.remove(recipe)        
+                  
     return render_template('home.html')
 
 
