@@ -67,12 +67,16 @@ def uplode():
         servings = request.form.get('servings')
 
         # append all inputs to the list 
-        recipe=[uploaded_file.filename]
+        # recipe=[uploaded_file.filename]
+        recipe =[]
         # add the image to list
         # recipe[uploaded_file.filename]=[name,ingredients,instructions,servings]
 
-        # recipe.append([uploaded_file.filename])
-        recipe.append([name, ingredients, instructions, servings])
+        recipe.append(uploaded_file.filename)
+        recipe.append(name)
+        recipe.append(ingredients)
+        recipe.append(instructions)
+        recipe.append(servings)
         # write all inputs to recipes  csv file 
         with open('recipes.csv', 'a', newline='') as file:
             writer = csv.writer(file)
@@ -89,9 +93,9 @@ def delete():
             if name == name1:
                 recipes.remove(recipe)
 
-    # with open('recipes.csv', 'w', newline='') as file:
-    #     writer = csv.writer(file)
-    #     writer.writerow(recipes)
+    with open('recipes.csv', 'w', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow(recipes)
 
     return render_template('home.html')
 
