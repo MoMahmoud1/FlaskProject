@@ -67,11 +67,11 @@ def uplode():
         servings = request.form.get('servings')
 
         # append all inputs to the list 
-        recipe=[]
+        recipe=[ploaded_file.filename]
         # add the image to list
         # recipe[uploaded_file.filename]=[name,ingredients,instructions,servings]
 
-        recipe.append([uploaded_file.filename])
+        # recipe.append([uploaded_file.filename])
         recipe.append([name, ingredients, instructions, servings])
         # write all inputs to recipes  csv file 
         with open('recipes.csv', 'a', newline='') as file:
@@ -85,8 +85,9 @@ def uplode():
 def delete():
     name = request.form.get('name')
     for recipe in recipes:
-        if name == recipe[1][0]:
-            recipes.remove(recipe)
+        for name1 in recipe:
+            if name == name1:
+                recipes.remove(recipe)
 
     with open('recipes.csv', 'w', newline='') as file:
         writer = csv.writer(file)
