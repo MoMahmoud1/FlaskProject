@@ -67,7 +67,7 @@ def uplode():
         servings = request.form.get('servings')
 
         # append all inputs to the list 
-        recipe=[ploaded_file.filename]
+        recipe=[uploaded_file.filename]
         # add the image to list
         # recipe[uploaded_file.filename]=[name,ingredients,instructions,servings]
 
