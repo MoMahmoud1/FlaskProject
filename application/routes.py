@@ -89,9 +89,9 @@ def delete():
             if name == name1:
                 recipes.remove(recipe)
 
-    with open('recipes.csv', 'w', newline='') as file:
-        writer = csv.writer(file)
-        writer.writerow(recipes)
+    # with open('recipes.csv', 'w', newline='') as file:
+    #     writer = csv.writer(file)
+    #     writer.writerow(recipes)
 
     return render_template('home.html')
 
