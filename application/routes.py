@@ -37,7 +37,7 @@ def register():
 @app.route("/home")
 def home():
     # open csv file and load photo and recipe for food
-    with open("recipes.csv", newline="") as file:
+    with open("allRecipes.csv", newline="") as file:
         reader = csv.reader(file)
         for row in reader:
             recipes.append(row)
@@ -64,15 +64,12 @@ def uplode():
         instructions = request.form.get('instructions')
         # get serving from input the form 
         servings = request.form.get('servings')
-
-        # append all inputs to the list 
-        # recipe = []
         # add the image to list 
         recipes = [uploaded_file.filename]
-        # recipe[uploaded_file.filename]=[name,ingredients,instructions,servings]
+    
         recipes.append([name, ingredients, instructions, servings])
         # write all inputs to recipes  csv file 
-        with open('recipes.csv', 'a', newline='') as file:
+        with open('allRecipes.csv', 'a', newline='') as file:
             writer = csv.writer(file)
             writer.writerow(recipes)
     # call back to home.html page   
@@ -86,8 +83,7 @@ def delete():
         for name1 in recipe:
             if name == name1:
                 recipes.remove(recipe)
-    print(name)
-    with open('recipes.csv', 'w', newline='') as file:
+    with open('allRecipes.csv', 'w', newline='') as file:
         writer = csv.writer(file)  
         writer.writerow(recipes)
           
