@@ -94,9 +94,10 @@ def delete():
         for recipe in recipes:
             if name == recipe[1]:
                 recipes.remove(recipe)
-        with open('allRecipes.csv', 'a', newline='') as file:
+        with open('allRecipes.csv', 'w', newline='') as file:
             writer = csv.writer(file)
-            writer.writerow(recipe)
+            for row in recipes:
+                writer.writerow(row)
 
     return redirect(url_for('home'))
 
