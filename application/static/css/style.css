@@ -9,6 +9,7 @@
 
 html,
 body {
+    
     background-color:aquamarine;
     font-family: Arial, Helvetica, sans-serif;
     height: 100%;
@@ -67,9 +68,9 @@ input[type=text]:focus, input[type=password]:focus {
 }
 
 .top-container {
-    background: #ccc;
+    /* background: #ccc; */
     padding:5px;
-    border-bottom:2px solid #0f0f0f;
+    /* border-bottom:2px solid #0f0f0f; */
 }
 .bottom-container {
     background: #333;
@@ -107,4 +108,9 @@ footer {
 .btn-submit:hover {
     opacity: 1;
 }
+#video{
+align-content: center;
+width: 2000px;
+height: 500px;
 
+}
