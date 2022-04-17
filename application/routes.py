@@ -66,39 +66,37 @@ def uplode():
         # get serving from input the form 
         servings = request.form.get('servings')
         # add the image to list 
-        recipes= []
-        recipe = []
+        recipe= []
         recipe.append(uploaded_file.filename)
-
-        recipe.extend([name, ingredients, instructions, servings])
-        recipes.append(recipe)
+        recipe.append(name)
+        recipe.append(ingredients)
+        recipe.append(instructions)
+        recipe.append(servings)
         # write all inputs to recipes  csv file 
-        with open('allRecipes.csv', 'w', newline='') as file:
+        with open('allRecipes.csv', 'a', newline='') as file:
             writer = csv.writer(file)
-            writer.writerow(recipes)
-        return redirect(url_for('home'))
-    else:     
+            writer.writerow(recipe)
+            
     # call back to home.html page   
-        
-        return render_template('uplode.html')
+    return redirect('home')
+
 
 @app.route('/delete', methods=['POST', 'GET'])
 def delete():
-    recipes = []
-    
-    # open csv file and load photo and recipe for food
-    with open("allRecipes.csv", newline="") as file:
-        reader = csv.reader(file)
-        for row in reader:
-            recipes.append(row)
-    
-
-
-    name = request.form.get('name')
-    for recipe in recipes:
-        for name1 in recipe:
-            if name == name1:
-                recipes.pop(recipe[1])  
+    if request.method == 'POST':
+        name = request.form.get('name')
+        recipes = []
+        # open csv file and load photo and recipe for food
+        with open("allRecipes.csv", newline="") as file:
+            reader = csv.reader(file)
+            for row in reader:
+                recipes.append(row)
+        for recipe in recipes:
+            if name == recipe[1]:
+                recipes.remove(recipe)
+        with open('allRecipes.csv', 'a', newline='') as file:
+            writer = csv.writer(file)
+            writer.writerow(recipe)
 
     return redirect(url_for('home'))
 
