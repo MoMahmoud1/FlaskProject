@@ -2,7 +2,9 @@
 creat wep app for recipes ,have login system using squlite3 database to save register data I register page and call it in login page ,home page have display all recipes and otipn to add new recepe and delete recipe,learn how to connect to database from cs50 and stack overflow and how to use flask from https://www.linkedin.com/learning/full-stack-web-development-with-flask/creating-and-running-a-simple-flask-application?autoSkip=true&autoplay=true&resume=false&u=27766394
 
 *main page have image for recipes app logo.
+
 *footer and navbar in main page.
+
 *registr page and login page in main page using jinja2.
 *show message in register page using js validation .
 *show error message in login page using bootstrap.
