@@ -1,0 +1,2 @@
+# FlaskProject >> creat wep app for recipes ,have login system using squlite3 database to save register data and call it in login ,home page have display all recipes and otipn to add new recepe and delete recipe,learn how to connect to database from cs50 and stack overflow and how to use flask from https://www.linkedin.com/learning/full-stack-web-development-with-flask/creating-and-running-a-simple-flask-application?autoSkip=true&autoplay=true&resume=false&u=27766394
+
