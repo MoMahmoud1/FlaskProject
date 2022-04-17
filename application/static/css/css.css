@@ -113,3 +113,8 @@ text-align: center;
   text-align: center;
   
 }
+#delete{
+  position: absolute;
+
+  right: 0px;
+}
