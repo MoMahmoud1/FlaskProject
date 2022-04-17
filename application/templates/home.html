@@ -17,7 +17,7 @@
 
     {% include "uplode.html" %}
     <br>
-    {% include "delete.html" %}
+  
     <div class="center">
 
         <h1>Recipes</h1>
@@ -31,6 +31,14 @@
                     <h2>{{ recipe[3] }}</h2>
                     <h2>{{ recipe[4] }}</h2>
                     <br>
+                    <form method = 'POST' id="delet_form"action="{{ url_for('delete')}}" enctype="multipart/form-data" class="needs-validation">
+                       
+                              <input type="hidden" value="{{ recipe[1] }}" name="name" id="name" rows="5" required > </input>
+
+                              <input type="submit" value="delete" style="color: crimson;">
+                      
+                        
+                    </form> 
                 {% endfor %}
 
     </div>

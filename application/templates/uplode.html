@@ -22,14 +22,14 @@
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="static/js/script1.js"></script> 
   <script type="text/javascript">
-    // search in the below wesite for accept image from user 
+    // search in the below website for accept image from user 
     // https://stackoverflow.com/questions/3828554/how-to-allow-input-type-file-to-accept-only-image-files
     function validateFileType(){
         var fileName = document.getElementById("image").value;
         var idxDot = fileName.lastIndexOf(".") + 1;
         var extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
         if (extFile=="jpg" || extFile=="jpeg" || extFile=="png"){
-            //TO DO
+          
         }else{
             alert("Only jpg/jpeg and png files are allowed!");
         }   
