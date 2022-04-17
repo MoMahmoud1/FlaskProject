@@ -21,11 +21,12 @@
         <h1>Recipes</h1>
         {% for recipe in recipes %}
         
-            <img style="border-radius: 4rem;" width="500px" height="500px" src="static/img/{{ recipe[0] }}"></img>
+            <img style="border-radius: 4rem;" width="1000px" height="300px" src="static/img/{{ recipe[0] }}"></img>
             <h2>{{ recipe[1] }}</h2>
             <h2>{{ recipe[2] }}</h2>
             <h2>{{ recipe[3] }}</h2>
             <h2>{{ recipe[4] }}</h2>
+            <br>
         {% endfor %}
 
 <!--     
