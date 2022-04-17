@@ -18,7 +18,7 @@ connect.row_factory = sqlite3.Row
 # def allowed_file(filename):
 #     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-recipes = []
+
 
 
 @app.route("/")
@@ -36,6 +36,7 @@ def register():
 
 @app.route("/home")
 def home():
+    recipes = []
     # open csv file and load photo and recipe for food
     with open("allRecipes.csv", newline="") as file:
         reader = csv.reader(file)
@@ -65,29 +66,41 @@ def uplode():
         # get serving from input the form 
         servings = request.form.get('servings')
         # add the image to list 
-    
-        recipes.append([uploaded_file.filename])
+        recipes= []
+        recipe = []
+        recipe.append(uploaded_file.filename)
+
+        recipe.extend([name, ingredients, instructions, servings])
+        recipes.append(recipe)
         # write all inputs to recipes  csv file 
-        with open('allRecipes.csv', 'a', newline='') as file:
+        with open('allRecipes.csv', 'w', newline='') as file:
             writer = csv.writer(file)
             writer.writerow(recipes)
-        recipes.append([name, ingredients, instructions, servings])
-        with open('allRecipes.csv', 'a', newline='') as file:
-            writer = csv.writer(file, delimiter=' ')
-            writer.writerow(recipes)
+        return redirect(url_for('home'))
+    else:     
     # call back to home.html page   
-    return redirect('home')
-
+        
+        return render_template('uplode.html')
 
 @app.route('/delete', methods=['POST', 'GET'])
 def delete():
+    recipes = []
+    
+    # open csv file and load photo and recipe for food
+    with open("allRecipes.csv", newline="") as file:
+        reader = csv.reader(file)
+        for row in reader:
+            recipes.append(row)
+    
+
+
     name = request.form.get('name')
     for recipe in recipes:
         for name1 in recipe:
             if name == name1:
-                recipes.remove(recipe)        
+                recipes.pop(recipe[1])  
 
-    return render_template('home.html')
+    return redirect(url_for('home'))
 
 
 @app.route('/register', methods=['POST', 'GET'])

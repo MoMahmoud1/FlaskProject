@@ -15,5 +15,12 @@
       <jdbc-url>jdbc:sqlite:C:\Users\moham\OneDrive\Desktop\ASD B1\FlaskProject\recipes.sqlite</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="identifier.sqlite" uuid="6dd4ebdd-f627-4a99-9c6a-586a61e8dd95">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:identifier.sqlite</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>
