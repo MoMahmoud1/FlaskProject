@@ -9,10 +9,12 @@
     <title></title>
 </head>
 <body>
+   
     
     <div id ="logout">
-        <a href="{{url_for('login')}}">logout</a>
+        <a href="{{url_for('login')}}" >logout</a>
     </div><br><br>
+
     {% include "uplode.html" %}
     <br>
     {% include "delete.html" %}
@@ -31,11 +33,11 @@
                     <br>
                 {% endfor %}
 
-<!--     
-        <video autoplay loop id="myVideo">
-            <source src="static/video/1.mp4" type="video/mp4">
-          </video> -->
     </div>
+    <video id="video" autoplay loop muted>
+        <source src="static/video/3.mp4" type="video/mp4">
+        
+    </video>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="static/js/script1.js"></script> 
     

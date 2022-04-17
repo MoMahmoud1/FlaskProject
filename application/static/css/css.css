@@ -1,6 +1,7 @@
 body{
-background-color: darkturquoise;
-  /* background-image: url("images/2.jpg"); */
+/* background-color: darkturquoise; */
+background-image: url("static/images/2.jpg");
+
 
 }
 
@@ -10,7 +11,10 @@ background-color: darkturquoise;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 55%;
+    border:black;
+    background-color: white;
+    border-radius: 2rem;
    
   }
   #comment{
@@ -21,14 +25,15 @@ background-color: darkturquoise;
     background-color: #d0e2bc;
   }
 #logout{
-  padding-left: 95%;
+  text-align: center;
+  right: 0px;
   background-color:chartreuse;
   border: 4px solid black;
   border-radius: 2rem;
   padding: 5px 10px;
-  text-align: center;
-  display: inline-block;
-
+  display:block;
+  position: absolute;
+ 
 }
 #ingredients{
 
@@ -50,4 +55,14 @@ background-color: darkturquoise;
 #image{
  width: 500px;
 }
-
+#video{
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
