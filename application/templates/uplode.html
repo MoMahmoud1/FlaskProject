@@ -1,6 +1,9 @@
 
 <form method = 'POST' id="uplode_form"action="{{ url_for('uplode')}}" onchange="validateFileType()" enctype="multipart/form-data" class="needs-validation">
     <div>
+      <div id ="add">
+      <h3>Add New Recipe</h3>
+    </div>
         <p><input id="image" type="file" name="file" class="form-control" accept=".jpg,.png,.jpeg" required> <br>
 
           <label for="name"  id="name1">Name</label><br>
