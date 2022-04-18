@@ -11,7 +11,7 @@ font-family: Arial, Helvetica, sans-serif;
     margin-right: auto;
     width: 55%;
     border:black;
-    background-color:aqua;
+    background-color:white;
     border-radius: 2rem;
    
   }
@@ -120,17 +120,29 @@ text-align: center;
 }
 #add{
   color: #000;
-  /* background-color:green; */
+  background-color:darkgrey; 
   width:200px;
   border-radius: 2rem;
   border: #000;
   text-align: center;
+  margin-left: 150px;
+
+  
 
 }
 #uplode1{
-  background-color:green;
+  background-color:white;
   border-radius: 2rem;
   width: 550px;
   position:relative;
   padding-left: 20px;
+  padding-top: 5px;
 }
+/* #recipe{
+  background-color:white;
+  border-radius: 2rem;
+  padding-right: 50px;
+  width:1000px;
+  text-align: center;
+ 
+} */

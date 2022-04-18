@@ -23,19 +23,23 @@
         <h1>Recipes</h1>
 
                 {% for recipe in recipes %}
+              
                 <form method = 'POST' id="delet_form"action="{{ url_for('delete')}}" enctype="multipart/form-data" class="needs-validation">
                     <input type="hidden" value="{{ recipe[1] }}" name="name" id="name" rows="5" required > </input>
                     <input type="submit" id=" delete"  value="delete" style="color: crimson;">
-                 </form> 
+                 </form> <br>
                 
                     <img style="border-radius: 4rem;" width="750px" height="300px"  src="static/img/{{ recipe[0] }}" ></img>
-                   
+                    <div id="recipe">
                     <h2>{{ recipe[1] }}</h2>
                     <h2>{{ recipe[2] }}</h2>
                     <h2>{{ recipe[3] }}</h2>
                     <h2>{{ recipe[4] }}</h2>
+                </div>
                     <br>
+                    
                  
+                <br>
                 {% endfor %}
 
     </div>
