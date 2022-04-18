@@ -7,6 +7,7 @@ from flask import render_template, request, redirect, flash, session, url_for
 from contextlib import closing
 import os
 
+# secret key to run all routes 
 SECRET_KEY = os.urandom(20)
 app.config['SECRET_KEY'] = SECRET_KEY
 
@@ -18,9 +19,7 @@ connect.row_factory = sqlite3.Row
 # def allowed_file(filename):
 #     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-
-
-
+# route for index page 
 @app.route("/")
 @app.route("/index")
 def index():
@@ -28,12 +27,14 @@ def index():
     return render_template('index.html')
 
 
+# route for register page 
 @app.route("/register")
 def register():
     # get register.html page loaded
     return render_template("register.html")
 
 
+# route for home page 
 @app.route("/home")
 def home():
     recipes = []
@@ -47,9 +48,10 @@ def home():
     # get home.html page loaded
     return render_template("home.html", recipes=recipes)
 
-
+# image file path
 app.config["UPLOAD_PATH"] = "application/static/img"
 
+# route for uplode recipe 
 @app.route("/uplode", methods=['POST', 'GET'])
 def uplode():
     if request.method == 'POST':
@@ -65,7 +67,7 @@ def uplode():
         instructions = request.form.get('instructions')
         # get serving from input the form 
         servings = request.form.get('servings')
-        # add the image to list 
+        # add all inpits to recipe list 
         recipe= []
         recipe.append(uploaded_file.filename)
         recipe.append(name)
@@ -81,6 +83,7 @@ def uplode():
     return redirect('home')
 
 
+# route for delete recipe
 @app.route('/delete', methods=['POST', 'GET'])
 def delete():
     if request.method == 'POST':
@@ -102,6 +105,7 @@ def delete():
     return redirect(url_for('home'))
 
 
+# route for registration 
 @app.route('/register', methods=['POST', 'GET'])
 def get_registration():
     # get the information from registration form
@@ -116,6 +120,7 @@ def get_registration():
     return redirect(url_for('login'))
 
 
+# route for login to recipes /home page 
 @app.route("/login", methods=['POST', 'GET'])
 def login():
     # get validation from class login form
