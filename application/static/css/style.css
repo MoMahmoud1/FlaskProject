@@ -39,12 +39,12 @@ li {
 }
 
 a {
-    background-color:chartreuse;
+    background-color:rgb(193, 191, 191);
     text-decoration: none;
     color:#0f0f0f;
 }
 
- a:hover { color : red;} 
+ a:hover { color :green;} 
 
 hr {
    
