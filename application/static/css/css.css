@@ -120,10 +120,17 @@ text-align: center;
 }
 #add{
   color: #000;
-  background-color:green;
+  /* background-color:green; */
   width:200px;
   border-radius: 2rem;
   border: #000;
   text-align: center;
 
+}
+#uplode1{
+  background-color:green;
+  border-radius: 2rem;
+  width: 550px;
+  position:relative;
+  padding-left: 20px;
 }
